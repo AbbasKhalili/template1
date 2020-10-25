@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Project.Contracts;
+using Project.DataAccess;
 
 namespace Project.Query
 {
     public class ProjectQuery : IProjectQuery
     {
+        private readonly ProjectContext _context;
+
+        public ProjectQuery(ProjectContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IList<ProjectDto>> GetAll()
         {
             

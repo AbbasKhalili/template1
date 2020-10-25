@@ -13,21 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{74D54913
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{BF44C239-059C-4DD7-85A3-9A66AC04B2D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Domain", "Project.Domain\Project.Domain.csproj", "{862780BC-B87E-434C-86B0-690ED1087774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Domain", "Project.Domain\Project.Domain.csproj", "{862780BC-B87E-434C-86B0-690ED1087774}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B41A4B22-FDB3-49FA-BB94-CB426C178E14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DataAccess", "Project.DataAccess\Project.DataAccess.csproj", "{019F21E7-8975-4AEC-9319-1A82ABF3EF5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.DataAccess", "Project.DataAccess\Project.DataAccess.csproj", "{019F21E7-8975-4AEC-9319-1A82ABF3EF5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Contracts", "Project.Contracts\Project.Contracts.csproj", "{5DC99EEF-03C9-425E-A457-F41E442EE79D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Contracts", "Project.Contracts\Project.Contracts.csproj", "{5DC99EEF-03C9-425E-A457-F41E442EE79D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Query", "Project.Query\Project.Query.csproj", "{F7A34257-C6A2-405C-9FC8-6AFFBA8886DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Query", "Project.Query\Project.Query.csproj", "{F7A34257-C6A2-405C-9FC8-6AFFBA8886DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Service", "Project.Service\Project.Service.csproj", "{D2046F09-99FE-4244-9FEE-AB52DD63D1A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Service", "Project.Service\Project.Service.csproj", "{D2046F09-99FE-4244-9FEE-AB52DD63D1A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WriteSide", "Project.WriteSide\Project.WriteSide.csproj", "{CF019F48-E915-4D33-A495-744AC16839C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.WriteSide", "Project.WriteSide\Project.WriteSide.csproj", "{CF019F48-E915-4D33-A495-744AC16839C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.QuerySide", "Project.QuerySide\Project.QuerySide.csproj", "{0F0F020C-3D8A-4B44-8356-68F5A969199D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.QuerySide", "Project.QuerySide\Project.QuerySide.csproj", "{0F0F020C-3D8A-4B44-8356-68F5A969199D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.MessageService", "Project.MessageService\Project.MessageService.csproj", "{A4357873-9C0E-4671-9F5B-9BF1F4F4415E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{0F0F020C-3D8A-4B44-8356-68F5A969199D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0F020C-3D8A-4B44-8356-68F5A969199D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F0F020C-3D8A-4B44-8356-68F5A969199D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4357873-9C0E-4671-9F5B-9BF1F4F4415E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4357873-9C0E-4671-9F5B-9BF1F4F4415E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4357873-9C0E-4671-9F5B-9BF1F4F4415E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4357873-9C0E-4671-9F5B-9BF1F4F4415E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{D2046F09-99FE-4244-9FEE-AB52DD63D1A4} = {AA4848B5-0FBA-41E8-B1AF-C983FBAA3E83}
 		{CF019F48-E915-4D33-A495-744AC16839C0} = {BF44C239-059C-4DD7-85A3-9A66AC04B2D1}
 		{0F0F020C-3D8A-4B44-8356-68F5A969199D} = {BF44C239-059C-4DD7-85A3-9A66AC04B2D1}
+		{A4357873-9C0E-4671-9F5B-9BF1F4F4415E} = {BF44C239-059C-4DD7-85A3-9A66AC04B2D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E24D55E-E979-4F0A-B35D-B1EA56FD699F}
