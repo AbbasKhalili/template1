@@ -1,4 +1,4 @@
-namespace Project.WriteSide
+namespace ProjectHost
 {
     public class HostConfig
     {

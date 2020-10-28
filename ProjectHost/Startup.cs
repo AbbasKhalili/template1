@@ -6,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Project.Bootstrap;
+using Project.Migration;
 
-namespace Project.QuerySide
+namespace ProjectHost
 {
     public class Startup
     {
@@ -26,6 +27,8 @@ namespace Project.QuerySide
             HostConfig = new HostConfig();
             Configuration.Bind("HostConfig", HostConfig);
             services.AddSingleton(HostConfig);
+
+            services.AddFluentMigrator(HostConfig.DBConnection, typeof(_0001_Project).Assembly);
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -39,6 +42,8 @@ namespace Project.QuerySide
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ApplicationServices.GetAutofacRoot().RunMigration();
 
             app.UseRouting();
             //app.UseAuthorization();

@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Contracts;
 
-namespace Project.WriteSide.Controllers
+namespace ProjectHost.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/Project")]
     public class ProjectController : ControllerBase
     {
         private readonly IProjectService _service;
@@ -17,7 +17,7 @@ namespace Project.WriteSide.Controllers
 
 
         [HttpPost]
-        public async Task<long> Get(ProjectViewModel model)
+        public async Task<long> Post(ProjectViewModel model)
         {
             return await _service.Create(model);
         }

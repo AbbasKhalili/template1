@@ -3,15 +3,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project.Contracts;
 
-namespace Project.QuerySide.Controllers
+namespace ProjectHost.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ProjectController : ControllerBase
+    [Route("api/Project")]
+    public class ProjectQueryController : ControllerBase
     {
         private readonly IProjectQuery _query;
 
-        public ProjectController(IProjectQuery query)
+        public ProjectQueryController(IProjectQuery query)
         {
             _query = query;
         }
