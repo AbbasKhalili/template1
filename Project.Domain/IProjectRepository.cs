@@ -1,6 +1,6 @@
 ﻿namespace Project.Domain
 {
-    public interface IProjectRepository
+    public interface IProjectRepository : IRepository
     {
 
     }

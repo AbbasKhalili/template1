@@ -1,33 +1,41 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Project.Bootstrap;
+using Project.Migration;
 
 namespace Project.WriteSide
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public HostConfig HostConfig { get; private set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddControllersAsServices();
+
+            HostConfig = new HostConfig();
+            Configuration.Bind("HostConfig", HostConfig);
+            services.AddSingleton(HostConfig);
+
+            services.AddFluentMigrator(HostConfig.DBConnection, typeof(_0001_Project).Assembly);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.AddModule(HostConfig.DBConnection);
+        }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -35,10 +43,10 @@ namespace Project.WriteSide
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ApplicationServices.GetAutofacRoot().RunMigration();
+            
             app.UseRouting();
-
-            app.UseAuthorization();
-
+            //app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

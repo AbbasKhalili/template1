@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Project.Contracts
 {
-    public interface IProjectQuery
+    public interface IProjectQuery : IFacadeService
     {
         Task<IList<ProjectDto>> GetAll();
         Task<ProjectDto> GetById(long id);

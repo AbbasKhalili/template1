@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Bootstrap\Project.Bootstrap.csproj" />
     <ProjectReference Include="..\Project.Contracts\Project.Contracts.csproj" />
+    <ProjectReference Include="..\Project.Migration\Project.Migration.csproj" />
   </ItemGroup>
 
 

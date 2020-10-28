@@ -2,7 +2,7 @@
 
 namespace Project.Contracts
 {
-    public interface IProjectService
+    public interface IProjectService : IFacadeService
     {
         Task<long> Create(ProjectViewModel model);
         Task Modify(ProjectViewModel model);

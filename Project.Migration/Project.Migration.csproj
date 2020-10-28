@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="FluentMigrator" Version="3.2.9" />
+    <PackageReference Include="FluentMigrator.Runner" Version="3.2.9" />
+    <PackageReference Include="FluentMigrator.Runner.SqlServer" Version="3.2.9" />
+  </ItemGroup>
+
+</Project>
