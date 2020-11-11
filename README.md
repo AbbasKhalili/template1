@@ -1,1 +1,1 @@
-# template1
+# Simple Solution Template.
